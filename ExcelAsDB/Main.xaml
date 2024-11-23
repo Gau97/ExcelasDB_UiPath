@@ -91,7 +91,7 @@
       <AssemblyReference>System.Data.OleDb</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap:VirtualizedContainerService.HintSize="908.8,563.2" sap2010:WorkflowViewState.IdRef="Flowchart_1" ValidateUnconnectedNodes="True">
+  <Flowchart sap:VirtualizedContainerService.HintSize="908.8,307.2" sap2010:WorkflowViewState.IdRef="Flowchart_1" ValidateUnconnectedNodes="True">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -111,7 +111,7 @@
           <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="In this Sequence , Excel is used as DB." DisplayName="Excel as DB" sap:VirtualizedContainerService.HintSize="492.79999999999995,809.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence sap2010:Annotation.AnnotationText="In this Sequence , Excel is used as DB." DisplayName="Excel as DB" sap:VirtualizedContainerService.HintSize="492.79999999999995,956.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="str_FilePath" />
           <Variable x:TypeArguments="x:String" Name="str_Provider" />
@@ -157,6 +157,11 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
         <ui:DatabaseConnect DisplayName="Connect to Database(Excel)" sap:VirtualizedContainerService.HintSize="430.4,92" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="[str_Provider]" ConnectionString="[str_ConnectionString]" DatabaseConnection="[DbConnection]" />
+        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Command" ExistingDbConnection="[DbConnection]" sap:VirtualizedContainerService.HintSize="430.4,147.2" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="UPDATE [SHEET1$] SET  [COLOR] = 'WHITE' WHERE [FRUIT] = 'MANGO' ">
+          <ui:ExecuteNonQuery.Parameters>
+            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+          </ui:ExecuteNonQuery.Parameters>
+        </ui:ExecuteNonQuery>
         <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DataTable="[dt_QueryOP]" DisplayName="Run Query" ExistingDbConnection="[DbConnection]" sap:VirtualizedContainerService.HintSize="430.4,147.2" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="SELECT * FROM [SHEET1$] WHERE [FRUIT]='MANGO'">
           <ui:ExecuteQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
